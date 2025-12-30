@@ -1,5 +1,5 @@
 // --- LOGIQUE JAVASCRIPT ULTRA-OPTIMISÉE ---
-        
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Matrix "Eco" (Moins de colonnes, caractères fixes)
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Scroll Reveal Observer (NOUVEAU)
+    // 8. Scroll Reveal Observer (CONSERVÉ)
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

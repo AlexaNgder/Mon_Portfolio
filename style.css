@@ -48,7 +48,12 @@ body {
 }
 
 /* --- UI ELEMENTS --- */
-.gradient-text { background: linear-gradient(90deg, #00ff41, #ffd700); -webkit-background-clip: text; color: transparent; }
+.gradient-text { 
+    background: linear-gradient(90deg, #00ff41, #ffd700); 
+    -webkit-background-clip: text; /* Pour la compatibilité (Chrome, Safari, Edge) */
+    background-clip: text;         /* La propriété standard pour les navigateurs modernes */
+    color: transparent; 
+}
 
 .card-hover { transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
 .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px -5px rgba(0, 255, 65, 0.15); border-color: var(--matrix-green); }
@@ -167,3 +172,14 @@ body.hovering .cursor-outline { width: 70px; height: 70px; background: rgba(0, 2
 .stagger-1 { animation-delay: 100ms; }
 .stagger-2 { animation-delay: 200ms; }
 .stagger-3 { animation-delay: 300ms; }
+
+/* Animation "En cours" (Battement de coeur) */
+@keyframes ping-slow {
+    75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+.animate-ping-slow {
+    animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
